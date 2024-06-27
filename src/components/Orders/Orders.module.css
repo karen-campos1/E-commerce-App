@@ -1,0 +1,201 @@
+.orders {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #352F2B;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #716C66;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formGroup {
+    margin-bottom: 1rem;
+  }
+  
+  .label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #716C66;
+  }
+  
+  .input,
+  .select {
+    padding: 0.5rem;
+    border: 1px solid #D3B7AB;
+    border-radius: 4px;
+    color: #352F2B;
+  }
+  
+  .button {
+    padding: 0.75rem;
+    background-color: #F5C8BE;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 0.5rem;
+  }
+  
+  .button:hover {
+    background-color: #E8BBB1;
+  }
+  
+  .subtitle {
+    text-align: center;
+    margin-top: 2rem;
+    color: #716C66;
+  }
+  
+  .orderList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .orderItem {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+    background-color: #FFFFFF;
+    border: 1px solid #D3B7AB;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    color: #352F2B;
+  }
+  
+  .orderDetails {
+    margin-bottom: 1rem;
+  }
+  
+  .orderProducts {
+    margin-bottom: 1rem;
+  }
+  
+  .productList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .productItem {
+    margin-bottom: 0.5rem;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+
+  .customerForm {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #FFFFFF; /* White background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #352F2B; /* Dark text */
+  }
+  
+  .customerList h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #716C66; /* Dark grey text */
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formGroup {
+    margin-bottom: 1.5rem;
+  }
+  
+  .formGroup label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #716C66; /* Dark grey text */
+  }
+  
+  .formGroup input,
+  .formGroup textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #D3B7AB; /* Light grey border */
+    border-radius: 4px;
+    color: #352F2B; /* Dark text */
+    font-size: 1rem;
+  }
+  
+  .submitButton {
+    padding: 0.75rem 1rem;
+    background-color: #F5C8BE; /* Light pink button */
+    color: #FFFFFF; /* White text */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center; /* Center the submit button */
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .submitButton:hover {
+    background-color: #E8BBB1; /* Darker pink on hover */
+  }
+  
+  .customerList h3 {
+    text-align: center;
+    margin-top: 3rem;
+    color: #716C66; /* Dark grey text */
+  }
+  
+  .customerList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .customerItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #FFFFFF; /* White background */
+    border: 1px solid #D3B7AB; /* Light grey border */
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    color: #352F2B; /* Dark text */
+  }
+  
+  .buttons {
+    display: flex;
+  }
+  
+  .buttons button {
+    background-color: #A3816E; /* Brown button */
+    color: #FFFFFF; /* White text */
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 0.5rem;
+  }
+  
+  .buttons button:hover {
+    background-color: #716C66; /* Dark grey on hover */
+  }
+  

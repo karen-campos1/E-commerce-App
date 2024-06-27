@@ -1,0 +1,59 @@
+.modalContent {
+    background-color: #ffffff; /* White background */
+    color: #352F2B; /* Dark text color */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modalHeader {
+    border-bottom: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .modalTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #716C66; /* Dark grey text */
+  }
+  
+  .modalBody {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    color: #716C66; /* Dark grey text */
+  }
+  
+  .modalFooter {
+    border-top: none;
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 1.5rem;
+  }
+  
+  .closeButton {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #716C66; /* Dark grey text */
+    cursor: pointer;
+  }
+  
+  .closeButton:hover {
+    color: #352F2B; /* Dark text color on hover */
+  }
+  
+  .confirmButton {
+    padding: 0.75rem 1.5rem;
+    background-color: #F5C8BE; /* Light pink button */
+    color: #FFFFFF; /* White text */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .confirmButton:hover {
+    background-color: #E8BBB1; /* Darker pink on hover */
+  }
+  

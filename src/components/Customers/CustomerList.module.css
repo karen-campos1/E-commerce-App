@@ -1,0 +1,30 @@
+.customerList {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.listItem div {
+  flex: 1;
+}
+
+.editButton,
+.deleteButton {
+  margin-left: 0.5rem;
+}
+

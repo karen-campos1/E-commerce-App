@@ -1,0 +1,107 @@
+.homePage {
+    text-align: center;
+    background-color: #ffffff; 
+  }
+  
+  .carouselContainer {
+    max-width: 500px; /* Set maximum width for the carousel */
+    margin: 0 auto; /* Center the carousel */
+    padding-top: 30px;
+  }
+  
+  .carouselItem {
+    cursor: pointer;
+  }
+  
+  .carousel img {
+    height: 200px; /* Adjust the height as needed */
+    object-fit: cover; /* Maintain aspect ratio */
+  }
+  
+  .carouselCaption {
+    padding: 25px 0; /* Add some padding for spacing */
+    text-align: center; /* Center-align the caption */
+  }
+  
+  .carouselCaption h3 {
+    font-size: 1.5rem; /* Adjust the font size */
+    font-weight: bold;
+    color: #352F2B; /* Dark text color */
+  }
+  
+  .carouselCaption p {
+    font-size: 1rem; /* Adjust the font size */
+    color: #716C66; /* Dark grey text */
+  }
+  
+  
+  .bannerContainer {
+    position: relative;
+    text-align: center;
+    margin-top: 0px;
+  }
+  
+  .bannerImage {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+  }
+  
+  .bannerContent {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: #ffffff; /* White text color for contrast */
+  }
+  
+  .bannerContent h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .bannerButton {
+    background-color: #000000; 
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .bannerButton:hover {
+    background-color: #e79b9b; 
+    color: #ffffff; 
+  }
+  
+.bannerContainer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+
+
+.mediaContainer {
+    margin-top: 2rem;
+}
+  
+.mediaContainer .row {
+    display: flex;
+    align-items: center;
+}
+  
+.mediaContainer .col-md-6 {
+    padding: 0.5rem;
+}
+  
+
+.mediaContainer img {
+ max-height: 660px;
+ width: auto;
+  }
