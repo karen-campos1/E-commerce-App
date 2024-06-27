@@ -3,14 +3,19 @@
     background-color: #ffffff; 
   }
   
+  .carouselWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
   .carouselContainer {
-    max-width: 500px; /* Set maximum width for the carousel */
-    margin: 0 auto; /* Center the carousel */
-    padding-top: 30px;
+    width: 40%; /* Adjust this to control the width of each carousel */
   }
   
   .carouselItem {
     cursor: pointer;
+    margin-top: 40px;
   }
   
   .carousel img {
@@ -53,7 +58,7 @@
     left: 25%;
     transform: translate(-50%, -50%);
     z-index: 1;
-    color: #ffffff; /* White text color for contrast */
+    color: #ffffff; 
   }
   
   .bannerContent h2 {

@@ -122,7 +122,7 @@ Push to the branch (git push origin feature/YourFeature).
 Open a pull request.
 
 
-Acknowledgements
+### Acknowledgements
 
 Thanks to Bootstrap for the UI components.
 Thanks to Cloudinary for image storage solutions.

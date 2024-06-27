@@ -6,7 +6,8 @@ import CustomerForm from './components/Customers/CustomerForm';
 import CustomerList from './components/Customers/CustomerList';
 import Orders from './components/Orders/Orders';
 import AdminProducts from './components/Products/AdminProducts';
-import DisplayProducts from './components/Products/DisplayProducts'; // Import the DisplayProducts component
+import DisplayProducts from './components/Products/DisplayProducts'; 
+import Footer from './components/Layout/Footer'; 
 import NotFound from './components/NotFound/NotFound';
 import './App.css';
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/admin/products" element={<AdminProducts />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer /> {/* Add Footer component */}
     </div>
   );
 }

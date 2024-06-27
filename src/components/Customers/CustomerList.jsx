@@ -32,9 +32,10 @@ function CustomerList() {
 
   return (
     <div className={styles.customerList}>
+      <h2>View/ Edit Customers and Accounts</h2>
       <Accordion defaultActiveKey="0">
         <Accordion.Item eventKey="0">
-          <Accordion.Header>Customer List</Accordion.Header>
+          <Accordion.Header className={styles.accordionHeader}>Customer List</Accordion.Header>
           <Accordion.Body>
             <ul className={styles.list}>
               {customers.map(customer => (
@@ -46,8 +47,8 @@ function CustomerList() {
                     <strong>Phone:</strong> {customer.phone}
                   </div>
                   <div>
-                    <Button variant="outline-primary" onClick={() => handleEdit(customer)} className={styles.editButton}>Edit</Button>
-                    <Button variant="outline-danger" onClick={() => handleDelete(customer.customer_id)} className={styles.deleteButton}>Delete</Button>
+                    <Button variant="outline-" onClick={() => handleEdit(customer)} className={styles.editButton}>Edit</Button>
+                    <Button variant="outline-" onClick={() => handleDelete(customer.customer_id)} className={styles.deleteButton}>Delete</Button>
                   </div>
                 </li>
               ))}
@@ -55,7 +56,7 @@ function CustomerList() {
           </Accordion.Body>
         </Accordion.Item>
         <Accordion.Item eventKey="1">
-          <Accordion.Header>Customer Account List</Accordion.Header>
+          <Accordion.Header className={styles.accordionHeader}>Customer Account List</Accordion.Header>
           <Accordion.Body>
             <ul className={styles.list}>
               {accounts.map(account => (
@@ -66,8 +67,8 @@ function CustomerList() {
                     <strong>Customer ID:</strong> {account.customer_id}
                   </div>
                   <div>
-                    <Button variant="outline-primary" onClick={() => handleEditAccount(account)} className={styles.editButton}>Edit</Button>
-                    <Button variant="outline-danger" onClick={() => handleDeleteAccount(account.account_id)} className={styles.deleteButton}>Delete</Button>
+                    <Button variant="outline-" onClick={() => handleEditAccount(account)} className={styles.editButton}>Edit</Button>
+                    <Button variant="outline-" onClick={() => handleDeleteAccount(account.account_id)} className={styles.deleteButton}>Delete</Button>
                   </div>
                 </li>
               ))}

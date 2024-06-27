@@ -1,12 +1,11 @@
 .customerList {
   max-width: 800px;
-  margin: 0 auto;
-  padding: 1rem;
+  margin: 30px auto;
+  padding: 3rem;
 }
 
 .list {
   list-style-type: none;
-  padding: 0;
 }
 
 .listItem {
@@ -26,5 +25,16 @@
 .editButton,
 .deleteButton {
   margin-left: 0.5rem;
+  background-color: #F5C8BE;
+  color:black;
 }
 
+.editButton:hover,
+.deleteButton:hover{
+  background-color: #e58671;
+} 
+
+.accordion.Header{
+  background-color: #e58671;
+color:#e58671;
+}

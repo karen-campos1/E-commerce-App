@@ -10,8 +10,9 @@
   
   .customerList h2 {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 10rem;
     color: #716C66; /* Dark grey text */
+
   }
   
   .form {
@@ -64,7 +65,7 @@
   
   .customerList {
     list-style: none;
-    padding: 0;
+    padding: 15px;
   }
   
   .customerItem {
