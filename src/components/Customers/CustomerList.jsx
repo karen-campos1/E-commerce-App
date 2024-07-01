@@ -35,7 +35,7 @@ function CustomerList() {
       <h2>View/ Edit Customers and Accounts</h2>
       <Accordion defaultActiveKey="0">
         <Accordion.Item eventKey="0">
-          <Accordion.Header className={styles.accordionHeader}>Customer List</Accordion.Header>
+          <Accordion.Header>Customer List</Accordion.Header>
           <Accordion.Body>
             <ul className={styles.list}>
               {customers.map(customer => (

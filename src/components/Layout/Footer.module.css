@@ -4,9 +4,10 @@ footer {
     border-top: 2px solid #FACBAE;
     border-bottom: 2px solid #e79b9b;
     padding: 1rem;
-    margin-top: 100px;
+    margin-top: px;
     text-align: center;
-    padding-top: 25px;
+    padding-top: 55px;
+    font-family: 'Lato';
 }
 
 .footer img {
@@ -36,7 +37,6 @@ footer {
 
 .footer ul li {
     margin-block-end: 10px;
-    font-family: AlibabaSans-Light;
 }
 
 .footer ul li a:hover {
@@ -67,10 +67,12 @@ footer {
     align-items: center;
     margin: 0 auto;
     max-width: 1200px;
+
   }
 
   .contact {
     text-align: left;
+
   }
 
   .text {
@@ -84,9 +86,36 @@ footer {
   .accent {
     color: #F5C8BE;
   }
-  
-  .copyBanner {
-    background-color: #222;
-    padding: 1rem;
+
+  p {
+
+
     margin-top: auto;
+    font-size: 12px;
   }
+
+  .newsletterButton {
+    padding: 8px;
+    border: none;
+    border-radius: 30px;
+    background-color: #e79b9b;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .newsletterButton:hover {
+    background-color:  #e58671;
+  }
+  .newsletterForm {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .newsletterInput {
+    padding: 12px;
+    border: none;
+    border-radius: 40px;
+    width: 250px;
+  }
+

@@ -1,0 +1,48 @@
+.cartContainer {
+    margin-top: 50px;
+}
+ h2{
+    text-align: center;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+  
+.cartItem {
+    margin-bottom: 20px;
+    border: none;
+
+}
+  
+.quantityControls {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+  
+.quantityInput {
+    width: 50px;
+    text-align: center;
+    margin: 0 10px;
+}
+  
+.removeButton {
+    margin-top: 10px;
+}
+  
+.summaryCard {
+    padding: 20px;
+
+}
+  
+.checkoutButton {
+    width: 100%;
+    margin-top: 20px;
+    background-color: #e79b9b;
+}
+
+.checkoutButton:hover{
+    background-color: #e6baba;
+}
+
+
+

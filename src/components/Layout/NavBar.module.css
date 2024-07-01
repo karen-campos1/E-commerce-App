@@ -18,6 +18,12 @@
     justify-content: center;
   }
   
+.dropdownItem:hover{
+  background-color: #000000;
+  color: #fff;
+} 
+
+
   .navLinks {
     display: flex;
     justify-content:center;
@@ -72,4 +78,27 @@
     font-size: 1.5rem;
     position: relative;
   }
-  
+
+h6{
+  color:  #e79b9b;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+
+.cartIcon {
+  position: relative;
+  display: inline-block;
+  font-size: 1.5rem;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -7px;
+  right: -10px;
+  background: #e79b9b;
+  color: #fff;
+  padding: 0 5px;
+  border-radius: 50%;
+  font-size: 0.9rem;
+}

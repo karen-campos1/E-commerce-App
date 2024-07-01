@@ -5,7 +5,7 @@ import ConfirmationModal from '../ConfirmationModal/ConfirmationModal';
 
 function AdminProducts() {
   const [products, setProducts] = useState([]);
-  const [formData, setFormData] = useState({ id: '', name: '', description: '', price: '', img_url: '' });
+  const [formData, setFormData] = useState({ id: '', name: '', description: '', price: '', img_url: '', category: ''});
   const [isEdit, setIsEdit] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
@@ -33,7 +33,8 @@ function AdminProducts() {
       name: formData.name,
       description: formData.description,
       price: formData.price,
-      image_url: formData.img_url
+      image_url: formData.img_url,
+      category: formData.category
     };
 
     if (isEdit) {
@@ -41,7 +42,7 @@ function AdminProducts() {
         .then(response => {
           setProducts(products.map(product => product.id === formData.id ? response.data : product));
           setIsEdit(false);
-          setFormData({ id: '', name: '', description: '', price: '', img_url: '' });
+          setFormData({ id: '', name: '', description: '', price: '', img_url: '', category: '' });
           setModalMessage('Product updated successfully');
           setShowModal(true);
         })
@@ -54,7 +55,7 @@ function AdminProducts() {
       axios.post('http://127.0.0.1:5000/products', data)
         .then(response => {
           setProducts([...products, response.data]);
-          setFormData({ id: '', name: '', description: '', price: '', img_url: '' });
+          setFormData({ id: '', name: '', description: '', price: '', img_url: '', category: '' });
           setModalMessage('Product added successfully');
           setShowModal(true);
         })
@@ -72,7 +73,8 @@ function AdminProducts() {
       name: product.name,
       description: product.description,
       price: product.price,
-      img_url: product.image_url
+      img_url: product.image_url,
+      category: product.category
     });
     setIsEdit(true);
   };
@@ -99,6 +101,10 @@ function AdminProducts() {
         <div className={styles.formGroup}>
           <label htmlFor="name">Name:</label>
           <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
+        </div>
+        <div className={styles.formGroup}>
+          <label htmlFor="category">Category:</label>
+          <input type="text" id="category" name="category" value={formData.category} onChange={handleChange} required />
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="description">Description:</label>

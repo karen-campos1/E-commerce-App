@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
+// src/components/Layout/NavBar.jsx
+import React, { useState, useContext } from 'react';
 import { Navbar, Nav, NavDropdown, Container, Form, FormControl, Button } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { FaShoppingCart } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import LoginModal from '../LoginModal/LoginModal'; 
+import UserContext from "../../context/UserContext";
 import styles from './NavBar.module.css';
+import { useSelector } from 'react-redux';
 
 function NavBar() {
+  const { user } = useContext(UserContext);
+  const cart = useSelector(state => state.cart);
+  const totalQuantity = cart.items.reduce((acc, item) => acc + item.quantity, 0);
   const [searchQuery, setSearchQuery] = useState('');
+  const [showLoginModal, setShowLoginModal] = useState(false);
   const navigate = useNavigate();
 
   const handleSearchChange = (event) => {
@@ -22,6 +30,14 @@ function NavBar() {
         navigate('/shop', { state: { searchResults: response.data } });
       })
       .catch(error => console.error('Error fetching search results:', error));
+  };
+
+  const handleLoginModalOpen = () => setShowLoginModal(true);
+  const handleLoginModalClose = () => setShowLoginModal(false);
+
+  const handleLogin = (userData) => {
+    console.log('User logged in:', userData);
+    // Handle user login (e.g., store token and user data)
   };
 
   return (
@@ -71,6 +87,7 @@ function NavBar() {
               </NavDropdown>
             </Nav>
           </Container>
+          <h6 className="mx-3 mt-2">User: {user.name}</h6>
           <Form className="d-flex" onSubmit={handleSearchSubmit}>
             <FormControl
               type="search"
@@ -85,10 +102,15 @@ function NavBar() {
           <LinkContainer to="/cart">
             <Nav.Link className={styles.cartIcon}>
               <FaShoppingCart />
+              {totalQuantity > 0 && (
+                <span className={styles.cartBadge}>{totalQuantity}</span>
+              )}
             </Nav.Link>
           </LinkContainer>
+          <Nav.Link onClick={handleLoginModalOpen} className={styles.loginButton}>Login</Nav.Link>
         </Navbar.Collapse>
       </Navbar>
+      <LoginModal show={showLoginModal} handleClose={handleLoginModalClose} handleLogin={handleLogin} />
     </div>
   );
 }
