@@ -1,0 +1,21 @@
+.input {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .login {
+    background-color: #822a89;
+    color: #fff;
+}
+  
+  .links {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+ .link {
+    color: #ff00f7;
+    text-decoration: none;
+    display: block;
+
+}

@@ -63,7 +63,7 @@ function LoginModal({ show, handleClose }) {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </FloatingLabel>
-            <Button variant="primary" type="submit" className="login">
+            <Button variant="" type="submit" className="login">
               Login
             </Button>
           </Form>
