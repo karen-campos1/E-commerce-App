@@ -6,7 +6,8 @@ import ConfirmationModal from '../ConfirmationModal/ConfirmationModal';
 function CustomerForm() {
   const [customers, setCustomers] = useState([]);
   const [accounts, setAccounts] = useState([]);
-  const [formData, setFormData] = useState({ id: '', name: '', email: '', phone: '', username: '', password: '', customer_id: '' });
+  const [customerFormData, setCustomerFormData] = useState({ name: '', email: '', phone: '' });
+  const [accountFormData, setAccountFormData] = useState({ username: '', password: '', customer_id: '' });
   const [isEdit, setIsEdit] = useState(false);
   const [isEditAccount, setIsEditAccount] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -22,19 +23,24 @@ function CustomerForm() {
       .catch(error => console.error('Error fetching accounts:', error));
   }, []);
 
-  const handleChange = (e) => {
+  const handleCustomerChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setCustomerFormData({ ...customerFormData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleAccountChange = (e) => {
+    const { name, value } = e.target;
+    setAccountFormData({ ...accountFormData, [name]: value });
+  };
+
+  const handleCustomerSubmit = (e) => {
     e.preventDefault();
     if (isEdit) {
-      axios.put(`http://127.0.0.1:5000/customers/${formData.id}`, formData)
+      axios.put(`http://127.0.0.1:5000/customers/${customerFormData.customer_id}`, customerFormData)
         .then(response => {
-          setCustomers(customers.map(customer => customer.id === formData.id ? response.data : customer));
+          setCustomers(customers.map(customer => customer.customer_id === customerFormData.customer_id ? response.data : customer));
           setIsEdit(false);
-          setFormData({ id: '', name: '', email: '', phone: '' });
+          setCustomerFormData({ name: '', email: '', phone: '' });
           setModalMessage('Customer updated successfully');
           setShowModal(true);
         })
@@ -44,10 +50,10 @@ function CustomerForm() {
           setShowModal(true);
         });
     } else {
-      axios.post('http://127.0.0.1:5000/customers', formData)
+      axios.post('http://127.0.0.1:5000/customers', customerFormData)
         .then(response => {
           setCustomers([...customers, response.data]);
-          setFormData({ id: '', name: '', email: '', phone: '' });
+          setCustomerFormData({ name: '', email: '', phone: '' });
           setModalMessage('Customer added successfully');
           setShowModal(true);
         })
@@ -62,11 +68,11 @@ function CustomerForm() {
   const handleAccountSubmit = (e) => {
     e.preventDefault();
     if (isEditAccount) {
-      axios.put(`http://127.0.0.1:5000/customer_accounts/${formData.customer_id}`, formData)
+      axios.put(`http://127.0.0.1:5000/customer_accounts/${accountFormData.customer_id}`, accountFormData)
         .then(response => {
-          setAccounts(accounts.map(account => account.id === formData.customer_id ? response.data : account));
+          setAccounts(accounts.map(account => account.account_id === accountFormData.account_id ? response.data : account));
           setIsEditAccount(false);
-          setFormData({ id: '', username: '', password: '', customer_id: '' });
+          setAccountFormData({ username: '', password: '', customer_id: '' });
           setModalMessage('Account updated successfully');
           setShowModal(true);
         })
@@ -76,10 +82,10 @@ function CustomerForm() {
           setShowModal(true);
         });
     } else {
-      axios.post('http://127.0.0.1:5000/customer_accounts', formData)
+      axios.post('http://127.0.0.1:5000/customer_accounts', accountFormData)
         .then(response => {
           setAccounts([...accounts, response.data]);
-          setFormData({ id: '', username: '', password: '', customer_id: '' });
+          setAccountFormData({ username: '', password: '', customer_id: '' });
           setModalMessage('Account added successfully');
           setShowModal(true);
         })
@@ -92,19 +98,19 @@ function CustomerForm() {
   };
 
   const handleEdit = (customer) => {
-    setFormData(customer);
+    setCustomerFormData(customer);
     setIsEdit(true);
   };
 
   const handleEditAccount = (account) => {
-    setFormData(account);
+    setAccountFormData(account);
     setIsEditAccount(true);
   };
 
   const handleDelete = (id) => {
     axios.delete(`http://127.0.0.1:5000/customers/${id}`)
       .then(() => {
-        setCustomers(customers.filter(customer => customer.id !== id));
+        setCustomers(customers.filter(customer => customer.customer_id !== id));
         setModalMessage('Customer deleted successfully');
         setShowModal(true);
       })
@@ -118,7 +124,7 @@ function CustomerForm() {
   const handleDeleteAccount = (id) => {
     axios.delete(`http://127.0.0.1:5000/customer_accounts/${id}`)
       .then(() => {
-        setAccounts(accounts.filter(account => account.id !== id));
+        setAccounts(accounts.filter(account => account.account_id !== id));
         setModalMessage('Account deleted successfully');
         setShowModal(true);
       })
@@ -133,36 +139,34 @@ function CustomerForm() {
     <>
       <div className={styles.customerForm}>
         <h2>{isEdit ? 'Edit Customer' : 'Add Customer'}</h2>
-        <form onSubmit={handleSubmit} className={styles.form}>
-          <input type="hidden" name="id" value={formData.id} />
+        <form onSubmit={handleCustomerSubmit} className={styles.form}>
           <div className={styles.formGroup}>
             <label>Name:</label>
-            <input type="text" name="name" value={formData.name} onChange={handleChange} required />
+            <input type="text" name="name" value={customerFormData.name} onChange={handleCustomerChange} required />
           </div>
           <div className={styles.formGroup}>
             <label>Email:</label>
-            <input type="email" name="email" value={formData.email} onChange={handleChange} required />
+            <input type="email" name="email" value={customerFormData.email} onChange={handleCustomerChange} required />
           </div>
           <div className={styles.formGroup}>
             <label>Phone:</label>
-            <input type="text" name="phone" value={formData.phone} onChange={handleChange} required />
+            <input type="text" name="phone" value={customerFormData.phone} onChange={handleCustomerChange} required />
           </div>
           <button type="submit" className={styles.submitButton}>{isEdit ? 'Update' : 'Add'}</button>
         </form>
         <h2>{isEditAccount ? 'Edit Account' : 'Add Account'}</h2>
         <form onSubmit={handleAccountSubmit} className={styles.form}>
-          <input type="hidden" name="customer_id" value={formData.customer_id} />
           <div className={styles.formGroup}>
             <label>Username:</label>
-            <input type="text" name="username" value={formData.username} onChange={handleChange} required />
+            <input type="text" name="username" value={accountFormData.username} onChange={handleAccountChange} required />
           </div>
           <div className={styles.formGroup}>
             <label>Password:</label>
-            <input type="password" name="password" value={formData.password} onChange={handleChange} required />
+            <input type="password" name="password" value={accountFormData.password} onChange={handleAccountChange} required />
           </div>
           <div className={styles.formGroup}>
             <label>Customer ID:</label>
-            <input type="number" name="customer_id" value={formData.customer_id} onChange={handleChange} required />
+            <input type="number" name="customer_id" value={accountFormData.customer_id} onChange={handleAccountChange} required />
           </div>
           <button type="submit" className={styles.submitButton}>{isEditAccount ? 'Update' : 'Add'}</button>
         </form>
